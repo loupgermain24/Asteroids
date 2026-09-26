@@ -1,10 +1,12 @@
 import pygame
 
-from constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from constants import PLAYER_RADIUS, SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_state
+from player import Player
 
 
 def main():
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
     pygame.init()
     clock = pygame.time.Clock()
     dt: float = 0.0
@@ -16,6 +18,7 @@ def main():
                 return
         dt = clock.tick(60) / 1000
         screen.fill("black")
+        player.draw(screen)
         pygame.display.flip()
 
 
