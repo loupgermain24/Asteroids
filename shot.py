@@ -10,7 +10,7 @@ class Shot(circleshape.CircleShape):
 
     def draw(self, screen: pygame.Surface) -> None:
         pygame.draw.circle(
-            screen, "white",
+            screen, "green",
             self.position,
             self.radius,
             constants.LINE_WIDTH)
